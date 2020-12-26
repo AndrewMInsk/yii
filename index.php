@@ -22,6 +22,5 @@ $manager = new ImageManager(array('driver' => 'imagick'));
 
 // to finally create image instances
 echo __DIR__ .'/images/test.jpg';
-$image = $manager->make(__DIR__ .'/images/test.jpg')->resize(300, 200);
-var_dump($image);
+$image = $manager->make(__DIR__ .'/images/test.jpg')->resize(300, 200)->blur(2)->save('images/test22.jpg');;
 
