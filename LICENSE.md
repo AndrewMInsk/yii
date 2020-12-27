@@ -1,5 +1,5 @@
 Copyright © 2008 by Yii Software LLC (http://www.yiisoft.com)
-All rights reserved.
+All rights reserved.1
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
