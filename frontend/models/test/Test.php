@@ -5,10 +5,19 @@ namespace frontend\models\test;
 
 use Yii;
 
+/**
+ * Class Test
+ * @package frontend\models\test
+ */
 class Test
 {
 
 
+    /**
+     * @param int $maxNews
+     * @return array
+
+     */
     public static function getNewsList($maxNews = 10)
     {
 
@@ -24,5 +33,19 @@ class Test
         }
 
         return $result;
+    }
+
+    /**
+     * @param int $id
+     * @return array|false
+
+     */
+    public static function getNewsById($id)
+    {
+        $id = intval($id);
+        $sql = "SELECT * FROM news WHERE id=$id";
+        return Yii::$app->db->createCommand($sql)->queryOne();
+
+
     }
 }
