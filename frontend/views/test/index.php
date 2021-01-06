@@ -1,5 +1,6 @@
 <?php
-echo 'hello world from view1211 ';
+echo '';
 foreach ($list as $item) {
     var_dump($item);
+    echo '<br>';
 }

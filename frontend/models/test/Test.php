@@ -2,13 +2,27 @@
 
 
 namespace frontend\models\test;
-use Yii;
 
+use Yii;
 
 class Test
 {
-    public static function getNewsList(){
-        $sql ='SELECT * FROM news';
-return Yii::$app->db->createCommand($sql)->queryAll();
+
+
+    public static function getNewsList($maxNews = 10)
+    {
+
+
+        $sql = 'SELECT * FROM news LIMIT ' . $maxNews;
+
+        $result = Yii::$app->db->createCommand($sql)->queryAll();
+        if (!empty($result) && is_array($result)) {
+
+            foreach ($result as &$item) {
+                $item['content'] = Yii::$app->StringHelper->getShort($item['content'], 4);
+            }
+        }
+
+        return $result;
     }
 }

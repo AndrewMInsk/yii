@@ -7,14 +7,25 @@ namespace frontend\controllers;
 use frontend\models\test\Test;
 use yii\web\Controller;
 
+
 class TestController extends Controller
 {
-    public function actionIndex(){
-       $list = Test::getNewsList();
+
+    public function actionIndex()
+    {
 
 
-        return $this->render('index',[
-            'list'=>$list
+        $maxNews = intval(\Yii::$app->params['maxNewsInList']);
+
+
+        $list = Test::getNewsList($maxNews);
+
+
+
+        return $this->render('index', [
+            'list' => $list
         ]);
+
+
     }
 }
