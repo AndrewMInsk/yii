@@ -8,7 +8,7 @@ class MailerController extends Controller
 {
     public function actionSend()
     {
-        echo 'Hello World';
+        echo 'Hello World 1';
         die();
     }
     public function actionTest()
