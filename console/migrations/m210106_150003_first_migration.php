@@ -2,6 +2,7 @@
 
 use yii\db\Migration;
 
+
 /**
  * Class m210106_150003_first_migration
  */
